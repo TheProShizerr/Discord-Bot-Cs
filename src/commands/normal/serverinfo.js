@@ -4,10 +4,10 @@ const db = new Database('./main.db');
 const { EmbedBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
-// Ensure that the highlightedPlayers table exists
+
 db.prepare("CREATE TABLE IF NOT EXISTS highlightedPlayers (name TEXT)").run();
 
-// Add the 'type' column to the highlightedPlayers table if it doesn't exist
+
 const hasTypeColumn = db.prepare("PRAGMA table_info(highlightedPlayers)").all().some(column => column.name === 'type');
 if (!hasTypeColumn) {
     db.prepare("ALTER TABLE highlightedPlayers ADD COLUMN type TEXT").run();
@@ -24,8 +24,8 @@ module.exports = {
             try {
                 serverInfo = await Gamedig.query({
                     type: 'cs16',
-                    host: '51.83.164.138',
-                    port: '27015'
+                    host: 'IP-SERWERA',
+                    port: 'PORT-SERWERA'
                 });
             } catch (error) {
                 console.error(error);
@@ -40,7 +40,7 @@ module.exports = {
                     return `${index + 1}. ${name}`;
                 });
 
-                // Split the player names into two columns
+                
                 const halfLength = Math.ceil(playerNames.length / 2);
                 const playerNamesLeftColumn = playerNames.slice(0, halfLength).join("\n") || "Na serwerze aktualnie nikt nie gra";
                 const playerNamesRightColumn = playerNames.slice(halfLength).join("\n");
@@ -58,7 +58,7 @@ module.exports = {
                         { name: 'Następna aktualizacja', value: `<t:${nextUpdateTimestamp}:R>` }
                     )
                     .setFooter({ text: 'Csowicze', iconURL: 'https://images-ext-2.discordapp.net/external/yo1QzTIM8eFykJBory7ugjoSkh8w3r8RNhYMqUZFnn4/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1108765755476029442/76205059c498d5d389f4fb1043f92638.png?width=559&height=559' }) // Set the footer text and icon of the embed
-                    .setColor(15418179); // Set the color of the embed to #D96E57
+                    .setColor(15418179); 
 
                 if (serverInfoMessage) {
                     serverInfoMessage.edit({ embeds: [embed] });
