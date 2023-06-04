@@ -29,6 +29,10 @@ readdirSync('./src/commands/normal').forEach(async file => {
 })
 }}})
 
+console.log("Bot stworzony przez TheProShizer#0001")
+console.log("Masz propozycje co do bota? napisz od mnie na discordzie!")
+console.log("Nie pomagam jesli ktos edytuje kod na wlasna reke")
+
 //slash-command-handler
 const slashcommands = [];
 readdirSync('./src/commands/slash').forEach(async file => {
