@@ -72,7 +72,7 @@ module.exports = {
             interaction.reply(`Pomyślnie dodałem **${playerName}** jako **${playerType}** do bazy danych z unikatowym kodem **${code}**`);
         } catch (error) {
             console.error(error);
-            return interaction.reply({ content: "Baza danych odrzucila twojego requesta, sprobuj pozniej bo sie moze przegrzalo", ephemeral: true });
+            return interaction.reply({ content: "Baza danych odrzuciła twojego requesta. Spróbuj ponownie później.", ephemeral: true });
         }
     }
 };

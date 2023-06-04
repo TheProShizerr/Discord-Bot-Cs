@@ -20,7 +20,7 @@ module.exports = {
             const ownerRows = db.prepare("SELECT name, code FROM highlightedPlayers WHERE type = 'Owner'").all();
 
             const embed = new EmbedBuilder()
-                .setTitle('Lista adminów serwera DD2')
+                .setTitle('Lista administracji serwera DD2')
                 .setThumbnail('https://images-ext-2.discordapp.net/external/yo1QzTIM8eFykJBory7ugjoSkh8w3r8RNhYMqUZFnn4/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1108765755476029442/76205059c498d5d389f4fb1043f92638.png?width=559&height=559');
 
             // Add fields to the embed only if their value is not an empty string
