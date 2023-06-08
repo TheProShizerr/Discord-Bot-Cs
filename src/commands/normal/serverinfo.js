@@ -18,6 +18,11 @@ module.exports = {
     aliases: ["csinfo"],
     cooldown: 50000, // 50 seconds
     run: async (client, message, args) => {
+        if (!message.member.permissions.has('ADMINISTRATOR')) {
+            return;
+        }
+        
+        
         let serverInfoMessage;
         const updateServerInfo = async () => {
             let serverInfo;
