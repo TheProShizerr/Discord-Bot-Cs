@@ -1,5 +1,5 @@
 ## Discord bot cs 1.6
-##### Komendy !serverinfo, !dodaj, !admin, !usun
+##### Komendy  /dodaj, /admin, /usun. /eval
 ##### Przed odpaleniem wpisz npm install
 ##### W ./src/commands/config.js  uzupełnij config bota
 ##### W komendach ./src/command/events pozmieniaj ip serwerów oraz ID kanałów
